@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
-import logo from "@/assets/qe-logo.png.asset.json";
+import logo from "@/assets/qe_logo.jpeg";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "../Reveal";
 import { StarMark } from "../StarMark";
@@ -18,7 +18,7 @@ export function AboutPreview() {
         <div className="relative mx-auto flex aspect-square w-full max-w-md items-center justify-center rounded-3xl bg-cream">
           <div className="pattern-star absolute inset-0 rounded-3xl opacity-50" aria-hidden />
           <img
-            src={logo.url}
+            src={logo}
             alt="Quran Education Academy logo"
             width={400}
             height={400}
