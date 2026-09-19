@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/qe_logo.jpeg";
+import logo from "@/assets/qa_logo_tp.png";
 import { site } from "@/data/site";
 import { cn } from "@/lib/utils";
 

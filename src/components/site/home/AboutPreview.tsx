@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
-import logo from "@/assets/qe_logo.jpeg";
+import logo from "@/assets/qa_logo_tp.png";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "../Reveal";
 import { StarMark } from "../StarMark";
