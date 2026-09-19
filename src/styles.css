@@ -1,0 +1,293 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Quran Education Academy design system.
+ * Brand primary #FFB606 -> oklch(0.824 0.170 79.3)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-cream: var(--cream);
+  --color-offwhite: var(--offwhite);
+  --color-dark: var(--dark);
+  --color-dark-foreground: var(--dark-foreground);
+  --color-dark-muted: var(--dark-muted);
+  --color-dark-border: var(--dark-border);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-heading: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 1px 2px oklch(0.245 0.039 264.4 / 0.04), 0 8px 24px -12px oklch(0.245 0.039 264.4 / 0.12);
+  --shadow-card: 0 1px 2px oklch(0.245 0.039 264.4 / 0.05), 0 16px 40px -20px oklch(0.245 0.039 264.4 / 0.18);
+  --shadow-glow: 0 12px 32px -12px oklch(0.824 0.17 79.3 / 0.45);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 10s ease-in-out infinite;
+  --animate-hero-zoom: hero-zoom 28s ease-in-out infinite alternate;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes hero-zoom {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.06);
+    }
+  }
+}
+
+:root {
+  --radius: 0.875rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.245 0.039 264.4);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.245 0.039 264.4);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.245 0.039 264.4);
+  --primary: oklch(0.824 0.17 79.3);
+  --primary-foreground: oklch(0.21 0.032 264.7);
+  --primary-hover: oklch(0.78 0.165 78);
+  --primary-soft: oklch(0.939 0.073 88.4);
+  --secondary: oklch(0.977 0.028 88.7);
+  --secondary-foreground: oklch(0.245 0.039 264.4);
+  --muted: oklch(0.97 0.006 90);
+  --muted-foreground: oklch(0.544 0.035 265.1);
+  --accent: oklch(0.977 0.028 88.7);
+  --accent-foreground: oklch(0.245 0.039 264.4);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.92 0.012 80);
+  --input: oklch(0.88 0.014 80);
+  --ring: oklch(0.824 0.17 79.3);
+  --cream: oklch(0.977 0.028 88.7);
+  --offwhite: oklch(0.994 0.007 88.6);
+  --dark: oklch(0.21 0.032 264.7);
+  --dark-foreground: oklch(0.985 0.005 90);
+  --dark-muted: oklch(0.72 0.02 260);
+  --dark-border: oklch(1 0 0 / 10%);
+  --success: oklch(0.55 0.13 150);
+  --success-foreground: oklch(0.985 0.005 90);
+  --chart-1: oklch(0.824 0.17 79.3);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --hero-night: oklch(0.26 0.028 70);
+  --sidebar: oklch(0.994 0.007 88.6);
+  --sidebar-foreground: oklch(0.245 0.039 264.4);
+  --sidebar-primary: oklch(0.824 0.17 79.3);
+  --sidebar-primary-foreground: oklch(0.21 0.032 264.7);
+  --sidebar-accent: oklch(0.977 0.028 88.7);
+  --sidebar-accent-foreground: oklch(0.245 0.039 264.4);
+  --sidebar-border: oklch(0.92 0.012 80);
+  --sidebar-ring: oklch(0.824 0.17 79.3);
+}
+
+.dark {
+  --background: oklch(0.21 0.032 264.7);
+  --foreground: oklch(0.985 0.005 90);
+  --card: oklch(0.245 0.039 264.4);
+  --card-foreground: oklch(0.985 0.005 90);
+  --popover: oklch(0.245 0.039 264.4);
+  --popover-foreground: oklch(0.985 0.005 90);
+  --primary: oklch(0.824 0.17 79.3);
+  --primary-foreground: oklch(0.21 0.032 264.7);
+  --primary-hover: oklch(0.78 0.165 78);
+  --primary-soft: oklch(0.35 0.06 80);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.985 0.005 90);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.72 0.02 260);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.985 0.005 90);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0.005 90);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.824 0.17 79.3);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Scroll reveal */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Subtle Islamic-inspired eight-point star pattern for small decorative areas */
+@utility pattern-star {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23FFB606' stroke-opacity='0.35' stroke-width='1'%3E%3Cpath d='M28 6l5.2 12.8L46 24l-12.8 5.2L28 42l-5.2-12.8L10 24l12.8-5.2z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 56px 56px;
+}
+
+/* Hero full-bleed veil: stronger behind the text side, lighter over the visual */
+@utility hero-veil {
+  background:
+    linear-gradient(
+      to right,
+      color-mix(in oklab, var(--hero-night) 88%, transparent) 0%,
+      color-mix(in oklab, var(--hero-night) 62%, transparent) 34%,
+      color-mix(in oklab, var(--hero-night) 42%, transparent) 60%,
+      transparent 82%
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--hero-night) 42%, transparent) 0%,
+      transparent 28%,
+      transparent 70%,
+      color-mix(in oklab, var(--hero-night) 55%, transparent) 100%
+    );
+
+  /* Tablets and phones need a more even, stronger veil for readability */
+  @media (max-width: 1023px) {
+    background:
+      linear-gradient(
+        to bottom,
+        color-mix(in oklab, var(--hero-night) 52%, transparent) 0%,
+        transparent 30%,
+        transparent 62%,
+        color-mix(in oklab, var(--hero-night) 64%, transparent) 100%
+      ),
+      linear-gradient(
+        color-mix(in oklab, var(--hero-night) 42%, transparent),
+        color-mix(in oklab, var(--hero-night) 42%, transparent)
+      );
+  }
+}
+
+/* Soft warm brand glow over the visual side of the hero */
+@utility hero-glow {
+  background: radial-gradient(
+    58% 72% at 72% 30%,
+    color-mix(in oklab, var(--primary) 20%, transparent) 0%,
+    transparent 70%
+  );
+}
+
+@utility container-site {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 76rem;
+  padding-inline: 1.25rem;
+
+  @media (min-width: 640px) {
+    padding-inline: 1.5rem;
+  }
+  @media (min-width: 1024px) {
+    padding-inline: 2rem;
+  }
+}
